@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Brief — Lost & Found</title>
+  <meta name="description" content="A campus lost & found design brief generator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top-nav">
+      <button class="nav-pill" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">←&nbsp; SYLLABUS</button>
+      <button class="nav-pill" type="button" onclick="document.querySelector('.brief-card').scrollIntoView({behavior:'smooth'})">←&nbsp; WEEK 01</button>
+      <div class="nav-title">— Design Brief</div>
+    </header>
+
+    <section class="brief-card" aria-labelledby="brief-title">
+      <div class="remaining">18 / 40&nbsp; REMAINING</div>
+
+      <article class="prompt-card">
+        <h1 id="brief-title">Lost &amp; found</h1>
+        <p>
+          A student who lost their bag on campus wants to check if anyone found it,
+          while the lost &amp; found is just a cardboard box nobody looks at until it overflows.
+        </p>
+        <div class="credit">→ drawn by Jaemin Ryu</div>
+      </article>
+
+      <label class="sr-only" for="studentName">Student name</label>
+      <input id="studentName" class="name-input" type="text" placeholder="Student name" autocomplete="name">
+
+      <button id="drawBtn" class="draw-btn" type="button">DRAW A BRIEF</button>
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
+
+    <section class="drawn-section" aria-labelledby="drawn-title">
+      <div class="section-heading">
+        <h2 id="drawn-title">DRAWN SO FAR</h2>
+        <button id="resetBtn" class="reset" type="button">RESET</button>
+      </div>
+      <div id="drawnList" class="drawn-list"></div>
+    </section>
+
+    <footer class="footer">WEEK 01 · DESIGN BRIEF GENERATOR</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
